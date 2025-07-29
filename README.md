@@ -10,6 +10,9 @@ A SharePoint Framework (SPFx) web part for conducting comprehensive knowledge ma
 
 The KMA web part provides an interactive assessment tool that helps organizations evaluate their knowledge management practices across multiple dimensions. The assessment generates scores and provides insights into areas for improvement in knowledge management strategies.
 
+![KMA Assessment Form](docs/Assessment.png)
+*Main assessment interface with dynamic scoring and section rollups*
+
 ## Features
 
 ### Assessment Capabilities
@@ -25,10 +28,16 @@ The KMA web part provides an interactive assessment tool that helps organization
 - **Admin Controls**: Security-trimmed toolbar for users with administrative permissions
 - **Customizable Styling**: Extensive theming options through web part properties
 
+![Collapsed View](docs/CollapsedView.png)
+*Compact view showing responsive design and section organization*
+
 ### Customization Options
 - **Color Theming**: Customizable colors for banners, organization elements, assessment levels, and subheadings
 - **Typography**: Configurable font families and sizes for different text elements
 - **Layout Options**: Flexible styling to match organizational branding
+
+![Color Picker](docs/ColorPicker.png)
+*Advanced color picker controls for complete theming customization*
 
 ## Applies to
 
@@ -101,6 +110,9 @@ The KMA web part provides an interactive assessment tool that helps organization
 ### Web Part Properties
 
 Access customization options through the web part property pane:
+
+![Web Part Properties](docs/WebpartProperties.png)
+*Comprehensive theming options in the property pane*
 
 #### Display Colors
 - Banner colors (light, medium, dark gradients)
