@@ -1,0 +1,242 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.toolbar {
+  background-color: #1f4e79;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navItem {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: -2px;
+  }
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin: 0 4px;
+  user-select: none;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.settingsButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: -2px;
+  }
+}
+
+.cogwheel {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.fullscreenButton {
+  background: #2d2d30;
+  border: 1px solid #3e3e42;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:hover {
+    background: #3e3e42;
+    border-color: #4a4a4f;
+  }
+
+  &:active {
+    background: #1e1e1e;
+    border-color: #2d2d30;
+  }
+
+  &:focus {
+    outline: 1px solid #007acc;
+    outline-offset: 1px;
+  }
+}
+
+.doubleArrow {
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 10px;
+}
+
+.logoText {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 0 10px;
+  }
+
+  .navItem {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .settingsButton {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+
+    .cogwheel {
+      font-size: 14px;
+    }
+  }
+
+  .fullscreenButton {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+
+    .doubleArrow {
+      font-size: 14px;
+    }
+  }
+
+  .logoText {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .separator {
+    margin: 0 2px;
+  }
+
+  .rightSection {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navItem {
+    padding: 12px 6px;
+    font-size: 12px;
+  }
+
+  .settingsButton {
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+
+    .cogwheel {
+      font-size: 12px;
+    }
+  }
+
+  .fullscreenButton {
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+
+    .doubleArrow {
+      font-size: 12px;
+    }
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .rightSection {
+    gap: 4px;
+  }
+}
+
+/* Ensure toolbar never has horizontal scrollbars in fullscreen mode */
+:global(body.kma-fullscreen) .toolbar {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+:global(body.kma-fullscreen) .toolbar * {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}

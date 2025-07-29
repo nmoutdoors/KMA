@@ -1,0 +1,449 @@
+.assessmentForm {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+  background: white;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Assessment Table */
+.assessmentTable {
+  width: 85%;
+  margin: 0 auto; /* Center the table */
+  border-collapse: collapse;
+  border: 1px solid #000;
+  overflow-x: hidden; /* Hide horizontal scrollbar on the table itself */
+}
+
+/* Header Row 1: Title and Organization */
+.headerRow1 {
+  height: 60px;
+}
+
+.titleCell {
+  background: linear-gradient(to bottom, #4a90e2 0%, #357abd 50%, #1e5f99 100%);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 8px;
+}
+
+.titleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 20.7px; /* 18px * 1.15 = 20.7px */
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 18.4px; /* 16px * 1.15 = 18.4px */
+  font-weight: normal;
+  margin: 2px 0 0 0;
+  line-height: 1.2;
+}
+
+.orgHeaderCell {
+  background: #4EA72E;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 4px;
+  width: 120px;
+}
+
+.orgLabel {
+  font-size: 16.1px; /* Match Overall Assessment Score font size */
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.overallAverageHeaderCell {
+  background: #2c5aa0;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 4px;
+  width: 120px;
+}
+
+.overallLabel {
+  font-size: 16.1px; /* Match Overall Assessment Score font size */
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Header Row 2: Overall Score and Organization Dropdown */
+.headerRow2 {
+  height: 40px;
+}
+
+.overallScoreCell {
+  background: #2c5aa0;
+  color: white;
+  text-align: right; /* Right-align the "Overall Assessment Score" text */
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 8px 16px;
+}
+
+.overallScoreLabel {
+  font-size: 16.1px; /* 14px * 1.15 = 16.1px */
+  font-weight: bold;
+}
+
+.orgDropdownCell {
+  background: #4a7c59; /* Same green as assessment level badges */
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 4px;
+}
+
+.orgDropdown {
+  background: #4a7c59; /* Same green as assessment level badges */
+  color: white;
+  border: 2px solid #5a8c69; /* Slightly lighter green for border */
+  border-radius: 2px;
+  padding: 4px 8px;
+  font-size: 16.1px; /* 14px * 1.15 = 16.1px */
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+
+  option {
+    background: #4a7c59; /* Same green as assessment level badges */
+    color: white;
+  }
+}
+
+.overallAverageCell {
+  background: #2c5aa0;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 4px;
+  font-size: 18.4px; /* 16px * 1.15 = 18.4px */
+  font-weight: bold;
+}
+
+/* Header Row 3: Instructions and Score */
+.headerRow3 {
+  height: 40px;
+}
+
+.instructionsCell {
+  background: linear-gradient(to bottom, #1e5f99 0%, #357abd 50%, #4a90e2 100%); /* Reversed gradient: dark to light */
+  color: white;
+  text-align: left;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 8px 16px;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+  line-height: 1.4;
+}
+
+.overallScoreValueCell {
+  background: #4EA72E;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 4px;
+}
+
+.overallScoreValue {
+  font-size: 20.7px; /* 18px * 1.15 = 20.7px */
+  font-weight: bold;
+  margin: 0;
+}
+
+.overallScoreLabel2 {
+  font-size: 11.5px; /* 10px * 1.15 = 11.5px */
+  font-weight: bold;
+  margin: 2px 0 0 0;
+}
+
+.overallAverageValueCell {
+  background: #2c5aa0;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: none; /* Hide header borders */
+  padding: 4px;
+  font-size: 18.4px; /* 16px * 1.15 = 18.4px */
+  font-weight: bold;
+}
+
+/* Column Headers */
+.columnHeaders {
+  background: #e8f4fd;
+  height: 30px;
+}
+
+.columnHeaders th {
+  border: 1px solid #b8d4f0;
+  padding: 6px 4px;
+  font-size: 11.5px; /* 10px * 1.15 = 11.5px */
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.questionHeader {
+  text-align: left !important;
+  padding-left: 8px !important;
+  width: 70%;
+}
+
+.levelHeader {
+  width: 10%;
+}
+
+.scoreHeader {
+  width: 7%;
+}
+
+.avgHeader {
+  width: 7%;
+}
+
+.sectionHeader {
+  width: 6%;
+}
+
+/* Section Header Rows */
+.sectionHeaderRow {
+  height: 25px;
+  font-weight: bold;
+}
+
+.sectionTitleCell {
+  border: 1px solid #000;
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 15.18px; /* 12.65px * 1.2 = 15.18px (20% increase) */
+  color: white; /* Make text white for the blue background */
+}
+
+.sectionLevelCell {
+  border: 1px solid #000;
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 15.18px; /* Match section title font size */
+  color: white; /* White text for section header */
+}
+
+.sectionScoreCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.sectionAverageCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 15.18px; /* 12.65px * 1.2 = 15.18px (20% increase) */
+  color: white; /* Make text white for the blue background */
+}
+
+.sectionFinalScoreCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 15.18px; /* 12.65px * 1.2 = 15.18px (20% increase) */
+  color: white; /* Make text white for the blue background */
+}
+
+/* Subsection Header Rows */
+.subsectionHeaderRow {
+  height: 25px;
+  font-weight: bold;
+  /* Background color is now applied dynamically via inline styles */
+}
+
+.subsectionTitleCell {
+  border: 1px solid #000;
+  padding: 4px 24px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+  font-style: italic;
+}
+
+.subsectionLevelCell {
+  border: 1px solid #000;
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 12.65px; /* Keep original subsection font size */
+  color: #2c5aa0; /* Same blue as Question Score column */
+}
+
+.subsectionScoreCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.subsectionAverageCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+}
+
+.subsectionFinalScoreCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+}
+
+/* Question Rows */
+.questionRow {
+  height: 25px;
+}
+
+.questionTextCell {
+  border: 1px solid #000;
+  padding: 4px 16px 4px 40px; /* Increased left padding for nesting */
+  text-align: left;
+  vertical-align: middle;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+  line-height: 1.3;
+}
+
+.questionLevelCell {
+  border: 1px solid #000;
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.levelDropdown {
+  width: 100%;
+  border: 1px solid #4a7c59;
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 11.5px; /* 10px * 1.15 = 11.5px */
+  background: white;
+
+  &:focus {
+    outline: 2px solid #4a7c59;
+    outline-offset: 1px;
+  }
+}
+
+.questionScoreCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #2c5aa0;
+  font-size: 12.65px; /* 11px * 1.15 = 12.65px */
+}
+
+.questionAverageCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.questionSectionScoreCell {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .levelDropdown {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .assessmentForm {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .assessmentForm {
+    font-size: 9px;
+  }
+
+  .avgHeader,
+  .sectionHeader,
+  .questionAverageCell,
+  .questionSectionScoreCell,
+  .sectionAverageCell,
+  .sectionFinalScoreCell {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .scoreHeader,
+  .questionScoreCell,
+  .sectionScoreCell {
+    display: none;
+  }
+}

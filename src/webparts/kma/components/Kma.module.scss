@@ -1,0 +1,149 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.kma {
+  display: flex;
+  flex-direction: column;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  background-color: white;
+
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+// Fullscreen mode styles
+:global(body.kma-fullscreen) .kma {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+}
+
+// Normal mode styles (when not in fullscreen)
+:global(body:not(.kma-fullscreen)) .kma {
+  position: relative;
+  height: auto;
+  min-height: 400px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.viewContent {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    color: "[theme:themePrimary, default: #0078d4]";
+    color: var(--themePrimary);
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: "[theme:bodyText, default: #323130]";
+    color: var(--bodyText);
+  }
+}
+
+.takeAssessment {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+.assessmentIntro {
+  background-color: "[theme:neutralLighter, default: #f3f2f1]";
+  background-color: var(--neutralLighter);
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 30px;
+  border-left: 4px solid "[theme:themePrimary, default: #0078d4]";
+  border-left-color: var(--themePrimary);
+}
+
+.startButton {
+  background-color: "[theme:themePrimary, default: #0078d4]";
+  background-color: var(--themePrimary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: "[theme:themeDarkAlt, default: #106ebe]";
+    background-color: var(--themeDarkAlt);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: 2px solid "[theme:themePrimary, default: #0078d4]";
+    outline-color: var(--themePrimary);
+    outline-offset: 2px;
+  }
+}
+
+// Global overrides to hide SharePoint chrome when in fullscreen mode
+:global {
+  // Add a class to body when KMA is in fullscreen mode
+  body.kma-fullscreen {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+
+    // Hide SharePoint navigation and header elements
+    #SuiteNavWrapper,
+    #spPageChrome,
+    .ms-compositeHeader,
+    .commandBarWrapper,
+    .sp-appBar,
+    .od-TopBar,
+    .ms-Nav,
+    .ms-Fabric .ms-Nav,
+    [data-automation-id="pageHeader"],
+    .spPageChrome {
+      display: none !important;
+    }
+  }
+
+  // Ensure the web part container doesn't interfere
+  .kma {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  // Hide any potential interfering elements
+  body.kma-fullscreen {
+    .ms-Fabric--isFocusVisible .ms-Fabric--isFocusVisible {
+      outline: none !important;
+    }
+  }
+}
